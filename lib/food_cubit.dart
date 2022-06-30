@@ -2,7 +2,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food/food_repo.dart';
 import 'package:food/food_item.dart';
 
-
 class FoodCubit extends Cubit<FoodState> {
   final FoodRepo _foodRepo = FoodRepo();
 
