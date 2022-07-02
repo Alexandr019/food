@@ -1,0 +1,1 @@
+const String baseUrl = 'https://yummly2.p.rapidapi.com';

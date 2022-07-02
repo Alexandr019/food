@@ -12,20 +12,21 @@ class FoodItem {
   });
 
   factory FoodItem.fromJson(Map<String, dynamic> json) => FoodItem(
-        name: json['content']['details']['name'],
-        images: json['content']['details']['images'][0]['hostedLargeUrl'] ,
-        rating: json['content']['details']["rating"],
-        totalTime: json['content']['details']["totalTime"],
+        name: json['name'],
+        images: json['images'][0]['hostedLargeUrl'],
+        rating: json["rating"],
+        totalTime: json["totalTime"],
       );
 
   static List<FoodItem> fromJsonList(List<dynamic> jsonList) {
     List<FoodItem> list = [];
     for (int i = 0; i < jsonList.length; i++) {
-      if (jsonList[i]['content']['details'] != null &&
-          jsonList[i]['content']['details']['name'] != null &&
-          jsonList[i]['content']['details']['rating'] != null &&
-          jsonList[i]['content']['details']['totalTime'] != null) {
-        list.add(FoodItem.fromJson(jsonList[i]));
+      final details = jsonList[i]['content']['details'];
+      if (details != null &&
+          details['name'] != null &&
+          details['rating'] != null &&
+          details['totalTime'] != null) {
+        list.add(FoodItem.fromJson(details));
       }
     }
     return list;
