@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:food/food_page.dart';
+import 'package:food/project_router.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,17 +14,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO create file with routes
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    SystemChrome.setPreferredOrientations(
+      [
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ],
+    );
     return MaterialApp(
       locale: const Locale('az'),
       title: 'Food',
-      initialRoute: '/',
+      initialRoute: Routes.home.name,
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => const FoodPage(),
+        '/home': (context) => const FoodPage(),
       },
     );
   }
