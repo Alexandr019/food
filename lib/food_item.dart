@@ -25,6 +25,7 @@ class FoodItem {
       if (details != null &&
           details['name'] != null &&
           details['rating'] != null &&
+          details['images'][0]['hostedLargeUrl'] != null &&
           details['totalTime'] != null) {
         list.add(FoodItem.fromJson(details));
       }

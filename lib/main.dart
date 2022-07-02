@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:food/food_page.dart';
 import 'package:food/project_router.dart';
 
 void main() {
@@ -13,7 +12,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO create file with routes
     SystemChrome.setPreferredOrientations(
       [
         DeviceOrientation.portraitUp,
@@ -23,11 +21,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       locale: const Locale('az'),
       title: 'Food',
-      initialRoute: Routes.home.name,
+      initialRoute: Routes.food.name,
+      onGenerateRoute: ProjectRouter.generateRoute,
       debugShowCheckedModeBanner: false,
-      routes: {
-        '/home': (context) => const FoodPage(),
-      },
     );
   }
 }

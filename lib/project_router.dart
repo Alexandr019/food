@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:food/main.dart';
+import 'package:food/food_page.dart';
 
-const _home = '/home';
+const _food = '/food';
 
 class ProjectRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case _home:
-        return _buildRoute(const MyApp());
+      case _food:
+        return _buildRoute(const FoodPage());
 
       default:
         return _buildRoute(
@@ -25,13 +25,13 @@ class ProjectRouter {
   }
 }
 
-enum Routes { home }
+enum Routes { food }
 
 extension RoutNames on Routes {
   String get name {
     switch (this) {
-      case Routes.home:
-        return _home;
+      case Routes.food:
+        return _food;
     }
   }
 }
